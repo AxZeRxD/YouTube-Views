@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html dir='ltr' lang='en-GB'>
+<head>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<title>AiZeR | .GG/CODERZ</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<style>
+body {
+    background-color: black; /* Set background color to black */
+    height: 100vh;
+    overflow: hidden; /* Hide overflow to prevent scrollbar */
+    position: relative;
+}
+
+.bg-text {
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+.button-container {
+    position: relative;
+    z-index: 2;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 0px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #f5b26f;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #f5b26f;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #f5b26f;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+button:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #f5b26f;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+.adjustlinkvideo {
+    position: relative;
+}
+
+.input {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    left: -70px;
+}
+</style>
+</head>
+<body>
+<div class='clearboth'></div>
+<div class='blog-name container' style="text-align: center;">
+<div class='container section' id='header' name='Header'><div class='widget Header' data-version='2' id='Header1'>
+<div class='header-widget'>
+<div>
+<h1>
+<a href='#' style="text-decoration: none;font-family: sans-serif;font-weight: 800;font-size: 48px;color: white;">
+Free Youtube Views 
+</a>
+</h1>
+</div>
+<p>
+</p>
+</div>
+</div></div>
+<nav role='navigation'>
+<div class='clearboth no-items section' id='page_list_top' name='Page list (top)'>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<div>
+<div class='vertical-ad-container no-items section' id='ads' name='Ads'>
+</div>
+<main class='centered-bottom' id='main' role='main' tabindex='-1'>
+<div class='main section' id='page_body' name='Page body'>
+<div class='widget Blog' data-version='2' id='Blog1'>
+<div class='blog-posts hfeed container'>
+<article class='post-outer-container'>
+<div class='post-outer'>
+<div class='post'>
+<a name='1662131317992794052'></a>
+<h3 class='post-title entry-title'>
+</h3>
+<div class='post-share-buttons post-share-buttons-top'>
+<div class='byline post-share-buttons goog-inline-block'>
+</div>
+</div>
+</div>
+<div style="display: flex; justify-content: center;align-items: center;flex-direction: column;">
+<p class="adjustlinkvideo" style="color: white;font-family: sans-serif;font-weight: 800;">&nbsp;<span style="font-size: large;">Link video</span></p>
+<table>
+  <tr>
+    <td>
+    </td>
+    <td><input class="input" id="urlvideo" value="" /><p style="color: white;font-family: sans-serif;font-weight: 800;">&nbsp;<span style="font-size: large;">views</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+    <td><input class="input" id="nbrvideo" value="3" />
+    </td>
+  </tr>
+  <tr>
+    <td> 
+        <div class="button-container">
+            <!-- Play Button -->
+            <button onclick="playVideo();" style="cursor: pointer;"><span style="font-size: large;">PLAY</span></button>
+        </div>
+    </td>
+  </tr>
+</table>
+</div>
+<div id="player">
+</div>
+<div class="bg-text">
+    <!-- Redirect Links -->
+    .gg/coderz
+</div> <!-- Text overlay -->
+
+<!-- Redirect Buttons -->
+<div style="text-align: center; margin-top: 20px;">
+    <a href="https://www.youtube.com/@nukersop"><button><span style="font-size: large;">YouTube</span></button></a>
+    <a href="https://discord.gg/coderz"><button><span style="font-size: large;">Discord</span></button></a>
+    <a href="https://github.com/AxZeRxD"><button><span style="font-size: large;">GitHub</span></button></a>
+</div>
+
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+function playVideo() { 
+    var urlvid, fields, vid;
+    urlvid = document.getElementById("urlvideo").value;
+    if(urlvid.includes("youtu.be")){
+        vid = list = urlvid.split("/")[3];
+    }
+    else if(urlvid.includes("&list=")){
+        fields = urlvid.split('?v=')[1];
+        vid = fields.split('&')[0];
+        list = fields.split('&list=')[1].split('&')[0];
+    } else {
+        fields = urlvid.split('?v=')[1];
+        vid = fields.split('&')[0];
+        list = vid;
+    }
+    
+    if(vid != ''){
+        urlvid = "https://www.youtube.com/embed/"+vid + "?autoplay=1&mute=1&loop=1";
+
+        var n = document.getElementById("nbrvideo").value;
+
+        for(var i=1;i<=n;i++){
+            var iframe = document.createElement('iframe');         
+            iframe.src = urlvid;
+            iframe.style.width = "256px";//256px 400px
+            iframe.style.height = "144px";//144px 120px
+            document.getElementById('player').appendChild(iframe);
+        }       
+    }      
+}
+</script>
+</body>
+</html>
